@@ -4718,6 +4718,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/geojson@npm:^7946.0.13":
+  version: 7946.0.14
+  resolution: "@types/geojson@npm:7946.0.14"
+  checksum: ae511bee6488ae3bd5a3a3347aedb0371e997b14225b8983679284e22fa4ebd88627c6e3ff8b08bf4cc35068cb29310c89427311ffc9322c255615821a922e71
+  languageName: node
+  linkType: hard
+
 "@types/istanbul-lib-coverage@npm:*, @types/istanbul-lib-coverage@npm:^2.0.0":
   version: 2.0.6
   resolution: "@types/istanbul-lib-coverage@npm:2.0.6"
@@ -9937,6 +9944,7 @@ __metadata:
     react-native: "npm:0.73.2"
     react-native-dropdown-picker: "npm:^5.4.6"
     react-native-element-dropdown: "npm:^2.10.1"
+    react-native-maps: "npm:1.10.0"
     react-native-safe-area-context: "npm:4.8.2"
     react-native-screens: "npm:~3.29.0"
     react-native-web: "npm:^0.19.9"
@@ -10373,6 +10381,22 @@ __metadata:
     react: "*"
     react-native: "*"
   checksum: 31d55ac54d99eef4bffc3f2f5f089807d4e9b0f1cd41fc4978e69d2af4f962854917a0ddee71f1cfc1f7d8c8fd99fac390282d8a7a8cd350280341e137cfe5e9
+  languageName: node
+  linkType: hard
+
+"react-native-maps@npm:1.10.0":
+  version: 1.10.0
+  resolution: "react-native-maps@npm:1.10.0"
+  dependencies:
+    "@types/geojson": "npm:^7946.0.13"
+  peerDependencies:
+    react: ">= 17.0.1"
+    react-native: ">= 0.64.3"
+    react-native-web: ">= 0.11"
+  peerDependenciesMeta:
+    react-native-web:
+      optional: true
+  checksum: ca8a2f5e91a742772a8eab6a0395d931a59dd5e742ed6e25171c27b8fd6c6b9ac6ae543f81a7d5193604716113b2b8883f1830a7a71e7ddf4aebe850b19e39e3
   languageName: node
   linkType: hard
 
