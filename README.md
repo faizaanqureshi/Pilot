@@ -1,7 +1,5 @@
 # Pilot: AI-Powered Travel Planner
 
-![Pilot Logo](link/to/your/logo.png)
-
 Pilot is an innovative mobile app built with React Native and TypeScript that empowers users to effortlessly create personalized travel plans with the help of artificial intelligence.
 
 ## Features
