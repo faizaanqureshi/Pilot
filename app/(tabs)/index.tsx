@@ -1,6 +1,6 @@
 import RNDateTimePicker, { DateTimePickerEvent } from '@react-native-community/datetimepicker';
 import { useCallback, useEffect, useState } from 'react';
-import { useColorScheme, SafeAreaView } from 'react-native';
+import { useColorScheme, SafeAreaView, TextInput } from 'react-native';
 import { Avatar, EnsureFlexed, H1, H2, H3, H4, H5, H6, ScrollView, Text, View, useForceUpdate } from 'tamagui';
 import { StyleSheet } from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
@@ -218,6 +218,10 @@ export default function TabOneScreen() {
     { label: 'Zimbabwe', value: 'ZW', icon: () => <Image style={{ width: 36, height: 24 }} source={require('../flags/zw.png')} /> },
   ]);
 
+  useEffect(() => {
+    fetch('https://shivammathur.com/countrycity/cities/United%20Arab%20Emirates?_type=query')
+  }, [country]);
+
   const onCountryOpen = useCallback(() => {
     setCityOpen(false);
   }, []);
@@ -294,32 +298,11 @@ export default function TabOneScreen() {
           }}
         />
         <H6 style={{ paddingTop: 20, paddingLeft: 4 }}>City</H6>
-        <DropDownPicker
-          style={{ marginTop: 4, display: `${countryOpen ? 'none' : 'flex'}` }}
-          open={cityOpen}
-          onOpen={onCityOpen}
-          value={city}
-          items={countries}
-          setOpen={setCityOpen}
-          setValue={setCity}
-          setItems={setCountries}
-          searchable={true}
-          searchPlaceholder='Search'
-          theme={`${colorScheme === 'dark' ? 'DARK' : 'LIGHT'}`}
-          placeholder='Select a city'
-          placeholderStyle={{
-            fontWeight: "500",
-            fontSize: 16
-          }}
-          disabled={country === null}
-          maxHeight={400}
-          disabledStyle={{
-            opacity: 0.5
-          }}
-          textStyle={{
-            fontWeight: "500",
-            fontSize: 16
-          }}
+        <TextInput
+          style={colorScheme === 'dark' ? styles.Input_Dark : styles.Input_Light}
+          placeholder='Enter a city'
+          editable={country !== null}
+          placeholderTextColor={country !== null ? (colorScheme === 'dark' ? 'white' : 'black') : undefined}
         />
       </View>
     </SafeAreaView>
@@ -337,5 +320,25 @@ const styles = StyleSheet.create({
   YBox: {
     display: 'flex',
     flexDirection: 'column',
+  },
+  Input_Dark: {
+    backgroundColor: '#1D1D1F',
+    borderRadius: 8,
+    height: 48,
+    marginTop: 4,
+    padding: 12,
+    color: 'white',
+    fontSize: 16,
+    fontWeight: '500',
+  },
+  Input_Light: {
+    backgroundColor: '#E3E3E5',
+    borderRadius: 8,
+    height: 48,
+    marginTop: 4,
+    padding: 12,
+    color: 'black',
+    fontSize: 16,
+    fontWeight: '500',
   },
 });
